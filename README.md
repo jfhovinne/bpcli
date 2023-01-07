@@ -6,7 +6,7 @@ Uses [Dagger](https://dagger.io/) Python SDK to build an app with
 ## Install
 
 ```
-pip install -r requirements.txt
+pip install bpcli
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ pip install -r requirements.txt
 Currently, only `build` command available.
 
 ```
-Usage: bpcli.py build [OPTIONS] IMAGE
+Usage: bpcli build [OPTIONS] IMAGE
 
   Generate app image from source code using the provided image name.
 
@@ -31,14 +31,14 @@ Options:
 ## Examples
 
 ```
-./bpcli/bpcli.py build --path=/path/to/your/go/app <your image name>
+bpcli build --path=/path/to/your/go/app <your image name>
 ```
 
 Build a PHP application using the paketo full builder, with debug logs,
 registry authentication and report containing the image tag and digest.
 
 ```
-./bpcli/bpcli.py build \
+bpcli build \
   --path=/path/to/your/php/app \
   --builder=paketobuildpacks/builder:full \
   --log-level=debug foo/bar \
