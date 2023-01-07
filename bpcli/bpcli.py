@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Python + Dagger + Buildpacks.
+Build apps with buildpacks and Dagger
 """
 
 import asyncclick as click
