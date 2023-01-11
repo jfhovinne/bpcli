@@ -25,6 +25,7 @@ Options:
   --log-level TEXT           Log level  [default: info]
   --docker-config-json TEXT  Path to docker config json file with registry
                              credentials
+  --env TEXT                 Set an environment variable
   --help                     Show this message and exit.
 ```
 
