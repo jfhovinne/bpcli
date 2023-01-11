@@ -35,7 +35,7 @@ bpcli build --path=/path/to/your/go/app <your image name>
 ```
 
 Build a PHP application using the paketo full builder, with debug logs,
-registry authentication and report containing the image tag and digest.
+registry authentication and report containing the image tag and digest:
 
 ```
 bpcli build \
@@ -43,4 +43,10 @@ bpcli build \
   --builder=paketobuildpacks/builder:full \
   --log-level=debug foo/bar \
   --docker-config-json=$HOME/.docker/config.json > report.toml
+```
+
+Adding environment variables:
+
+```
+bpcli build --path=/path/to/your/app foo/bar --env FOO=bar --env BAR=foo
 ```
