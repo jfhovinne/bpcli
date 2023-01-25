@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='bpcli',
-    version='0.2.1',
+    version='0.3.0',
     author='jfhovinne',
     author_email='bpcli@hovinne.com',
     license='MIT',
