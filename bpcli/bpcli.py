@@ -24,13 +24,13 @@ def cli():
 async def build(image, builder, path, log_level, docker_config_json, env):
     """Generate app image from source code using the provided image name."""
     async with dagger.Connection(dagger.Config(log_output=sys.stderr)) as client:
-        src = client.host().directory(Path(path).resolve())
+        src = client.host().directory(str(Path(path).resolve()))
         cmd = f'/cnb/lifecycle/creator -app=/src -log-level={log_level} {image}'
         ctr = client.container().from_(builder)
         # Docker config
         if docker_config_json:
-            config_dir = client.host().directory(Path(docker_config_json).resolve().parent)
-            config_json = config_dir.file(Path(docker_config_json).resolve().name)
+            config_dir = client.host().directory(str(Path(docker_config_json).resolve().parent))
+            config_json = config_dir.file(str(Path(docker_config_json).resolve().name))
             ctr = ctr.with_exec(['mkdir', '-p', '/home/cnb/.docker'])
             ctr = ctr.with_file('/home/cnb/.docker/config.json', config_json)
         # Environment variable(s) to platform/env files
